@@ -1,0 +1,118 @@
+:root {
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+    --transparent-white: hsla(0, 0%, 100%, 0.75); /* Paragraphs */
+    --very-light-gray: hsl(0, 0%, 95%); /* Background, headings, buttons */
+}
+
+@font-face {
+    font-family: 'lexend-deca';
+    src: url('fonts/lexend_deca/LexendDeca-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'big-shoulder-display';
+    src: url('fonts/bih_shoulder_display/BigShouldersDisplay-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'lexend-deca';
+    font-size: 15px;
+    color: var(--transparent-white);
+}
+
+body {
+    background-color: var(--very-light-gray);
+}
+
+main {
+    margin: 20px;   
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+article {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+article header h1 {
+    padding: 20px 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-family: 'big-shoulder-display';
+    color: var(--very-light-gray);
+}
+
+article p {
+    margin-bottom: 30px;
+    flex: 1;
+}
+
+article:first-child {
+    background-color: var(--bright-orange);
+}
+article:first-child .btn {
+    color: var(--bright-orange);
+}
+
+article:nth-child(2) {
+    background-color: var(--dark-cyan);
+}
+article:nth-child(2) .btn {
+    color: var(--dark-cyan);
+}
+
+article:last-child {
+    background-color: var(--very-dark-cyan);
+}
+article:last-child .btn {
+    color: var(--very-dark-cyan);
+}
+
+.btn {
+    box-sizing: border-box;
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--very-light-gray);
+    border-radius: 30px;
+    padding: 10px 30px;
+    border: 2px solid transparent;
+}
+
+.btn:hover {
+    background-color: transparent;
+    border: 2px solid var(--very-light-gray);
+    color: var(--very-light-gray) !important;
+}
+
+@media only screen and (min-width: 1440px) {
+    html {
+        height: 100%;
+    }
+    body {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    main {
+        display: flex;
+    }
+    article {
+        width: 210px;
+        height: 400px;
+    }
+}
